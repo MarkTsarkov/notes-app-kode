@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/jackc/pgx/v5"
 	"github.com/marktsarkov/notes-app-kode/pkg/models/postgres"
@@ -19,8 +20,8 @@ type application struct {
 func main() {
     infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
 	errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Llongfile)
-
-    PG_DSN := "host=localhost port=54321 dbname=users user=admin password=admin sslmode=disable"
+    time.Sleep(2*time.Second)
+    PG_DSN := "host=pg port=5432 dbname=users user=admin password=admin sslmode=disable"
     conn, err := pgx.Connect(context.Background(), PG_DSN)
     if err != nil {
         errorLog.Fatal(err)
@@ -38,7 +39,7 @@ func main() {
         ErrorLog: errorLog,
     }
 
-    infoLog.Println("Запуск сервера на http://127.0.0.1:4000") //ADRESS=8080
+    infoLog.Println("Запуск сервера на http://127.0.0.1:4000")
     err = srv.ListenAndServe()
     errorLog.Fatal(err)
 }
