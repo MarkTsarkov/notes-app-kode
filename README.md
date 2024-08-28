@@ -10,8 +10,8 @@
 
 1) Создание новой заметки
    
-   URL: localhost:4000/create
-   Method: POST Body:
+   URL: **localhost:4000/create**
+   Method: **POST** Body:
   `{
       "user":"boris",
       "password":"verysecure",
@@ -21,8 +21,8 @@
 
 2) Создание новой заметки
    
-   URL: localhost:4000/create
-  Method: POST
+   URL: **localhost:4000/create**
+  Method: **POST**
   Body:
   `{
       "user":"boris",
@@ -33,8 +33,8 @@
 
 3) Создание новой заметки
    
-   URL: localhost:4000/create
-  Method: POST
+   URL: **localhost:4000/create**
+  Method: **POST**
   Body: 
   `{
       "user":"boris",
@@ -45,8 +45,8 @@
 
 4) Показать все заметки пользователя
    
-   URL: localhost:4000/show
-Method: GET
+   URL: **localhost:4000/show**
+Method: **GET**
 Body:
 `{
     "user":"boris",
@@ -56,8 +56,8 @@ Body:
 
 5) Показать все заметки пользователя
    
-   URL: localhost:4000/show
-Method: GET
+   URL: **localhost:4000/show**
+Method: **GET**
 Body:
 `{
     "user":"NOTboris",
